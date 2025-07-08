@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I miei Workout</title>
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #calendar {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .button-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .routine-button {
+      background-color: #bb86fc;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .routine-button:hover {
+      background-color: #9b67e6;
+    }
+  </style>
+</head>
+<body>
+  <h1>I miei Workout</h1>
+
+  <div id="calendar"></div>
+
+  <div class="button-container">
+    <button class="routine-button" onclick="creaRoutine()">Crea nuova routine</button>
+  </div>
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        themeSystem: 'standard',
+        height: 'auto',
+        events: [
+          // Puoi aggiungere eventi qui
+          { title: 'Workout Gambe', date: '2025-07-10' },
+          { title: 'Workout Braccia', date: '2025-07-12' }
+        ]
+      });
+      calendar.render();
+    });
+
+    function creaRoutine() {
+      // Sostituisci con il link alla tua pagina/form GoodBarber
+      window.location.href = "https://tuo-link.goodbarber.app/crea-routine";
+    }
+  </script>
+</body>
+</html>
